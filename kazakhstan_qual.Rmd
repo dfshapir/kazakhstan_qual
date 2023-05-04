@@ -1,0 +1,38 @@
+---
+title: "kazakhstan_qual"
+author: "Daniel Shapiro"
+date: "5/4/2023"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(readr)
+library(readxl)
+```
+
+```{r}
+kazakhstan <- read_xlsx("Kazakhstan China Data.xlsx")
+```
+
+```{r}
+percentage <- kazakhstan %>%
+  filter(Type %in% c("Import Pct", "Export Pct"))
+
+amount <- kazakhstan %>%
+  filter(Type %in% c("Import Amt", "Export Amt"))
+```
+
+```{r}
+ggplot(percentage, aes(x = Year, y = Value, color = Type)) +
+  geom_point() +
+  geom_line()
+```
+
+```{r}
+ggplot(amount, aes(x = Year, y = Value, color = Type)) +
+  geom_point() +
+  geom_line()
+```
+
