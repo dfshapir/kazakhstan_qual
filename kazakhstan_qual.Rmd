@@ -1,8 +1,9 @@
 ---
-title: "kazakhstan_qual"
-author: "Daniel Shapiro"
-date: "5/4/2023"
+title: "Content and Discourse Analysis: Kazakhstan and China"
+author: "Daniel Shapiro, PSCI 6802"
 output: pdf_document
+header-includes:
+  - \usepackage{setspace}
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +11,15 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(readr)
 library(readxl)
+library(cowplot)
+options(scipen = 999)
 ```
+
+\doublespacing
+
+## Introduction
+
+Kazakhstan, the largest country in Central Asia and the 9th-largest in the world, has a unique geopolitical and geoeconomic profile. In addition to its history as a former Soviet republic and resulting close connections with Russia, Kazakhstan also has a 953-mile long border with China and has enjoyed increasingly close relations with its large superpower neighbor to the east over the last few years. Kazakhstan and China both participate in a number of political and security organizations, including the Collective Security Treaty Organization (CSTO) and the Shanghai Cooperation Organization (SCO), and, importantly for this paper, the two countries have developed strong trade ties over the last 25 years. Looking below at the graphs, we can see that China's role in Kazakhstan's economy has grown both in terms of import and export *percentage* and *amount.* First, Figure 1 shows percentage-wise how Kazakhstan's imports from and exports to China have grown over the years.
 
 ```{r}
 kazakhstan <- read_xlsx("Kazakhstan China Data.xlsx")
@@ -24,15 +33,61 @@ amount <- kazakhstan %>%
   filter(Type %in% c("Import Amt", "Export Amt"))
 ```
 
-```{r}
-ggplot(percentage, aes(x = Year, y = Value, color = Type)) +
+*Figure 1:*
+
+```{r, out.width = '77%', fig.align='center'}
+pct <- ggplot(percentage, aes(x = Year, y = Value)) +
   geom_point() +
-  geom_line()
+  geom_line() +
+  labs(title = "Kazakhstan Exports to and Imports From China, Percent",
+       subtitle = "Data from World Bank",
+       y = "Percent") +
+  facet_wrap(~Type)
+
+pct
 ```
 
-```{r}
-ggplot(amount, aes(x = Year, y = Value, color = Type)) +
+While Kazakhstan's exports to China (as a percent of Kazakhstan's total exports) have fluctuated to some degree over the last 25 years, the general trend has been up. Imports (percentage-wise), meanwhile, have essentially only increased. In terms of dollar amount, both exports and imports have increased drastically over the same time period, from next to nothing in the mid-1990s to billions per year in the 2010s. Figure 2 shows these trends:
+
+*Figure 2:*
+
+```{r, out.width = '77%', fig.align='center'}
+amt <- ggplot(amount, aes(x = Year, y = Value)) +
   geom_point() +
-  geom_line()
+  geom_line() +
+  labs(title = "Kazakhstan Exports to and Imports From China, Amount",
+       subtitle = "Data from World Bank",
+       y = "Amount (in thousands USD)") +
+  facet_wrap(~Type)
+
+amt
 ```
 
+Given this massive increase in China's economic importance to Kazakhstan, a logical question follows -- how has Kazakhstan's rhetoric about China changed over time? More formally for the purposes of this paper, **how has the Kazakhstani president's rhetoric about China changed as trade between the two countries has risen?**
+
+This question is important for a number of reasons. For one, it tells us about aspects of Kazakhstan's unique foreign policy profile vis-$\grave{a}$-vis a neighboring superpower. During our current era of great power conflict, understanding ways in which smaller states perceive their more powerful neighbors and their overall position in the international system is useful for scholars and policymakers alike. Additionally, this question helps us understand aspects of specifically what certain countries think of China and how these perceptions have developed over time. Thirdly, through our analysis of Kazakhstani presidential speeches (as described in further detail below in the methodology section), we can better understand ways in which leaders' rhetoric can signal changes to come, changes that have already happened, and/or aspirational changes. While this study will only apply to Kazakhstan, similar work can be done for any number of other countries as well.[^1]
+
+## Methodology
+
+To answer this question, this paper employs content analysis, a method which, according to Klaus Krippendorff (1969), takes "...replicable and valid methods for making specific inferences from text to other states or properties of its source."[^2] According to Krippendorff's definition, content analysis has a number of characteristics:
+
+* It studies **text only** instead of text and other symbolic material,
+* It creates **inference** as an intellectual product,
+* It **can** draw inference about the "latent" content of the material,
+* It applies inference to the **source** as the object of investigation,
+* It **can** be qualitative as well as quantitative,
+* It is **replicable** and **valid**.
+
+For this paper, I draw inferences from text about the properties of the *source*, i.e. the Kazakhstani government or one of its representatives. There are obviously many different texts that could be used for the purposes of this paper, so I had to sample. Krippendorff (2018) writes that "...the universe of available texts is too large to be examined as a whole, so content analysts need to limit their research to a manageable body of texts.”[^3] Thus, I selected only a specific type of document -- State of the Union addresses by the President of Kazakhstan. These typically happen once a year, and are available on the President's website for most years that the World Bank provides trade data. State of the Union speeches are long and all-encompassing and tend to focus on the most important issues facing the country in a given year. Focusing only on these speeches makes the body of texts "manageable," ensures that they are being drawn from relatively similar units with the main differentiating variable being time, and makes sure that each text could address relations with China and one way or another. After selecting State of the Union speeches as my "type" of document, I then perform a *census* -- in Krippendorff's words, "a body of texts that includes all of its kind."[^4]
+
+In addition to paring down the volume of potentially analyzable texts to a more manageable level, content analysis also demands strict methodology in coding. Given Krippendorff's requirements for "replicability" and "validity," firm methodology is important for this part of the paper. Salda$\tilde{n}$a (2015) provides a comprehensive list of various coding styles. In this paper, I use *descriptive coding*, which, according to Salda$\tilde{n}$a, "... summarizes in a word or short phrase -- most often as a noun -- the basic topic of a passage of qualitative data."[^5] My codebook will be included as an appendix at the end of the paper; all codes used will be displayed there. 
+
+## Discussion and Results
+
+## Conclusions
+
+[^1]: In my dissertation, I hope to explore these sorts of questions as a cross-case comparative study between a number of different countries.
+[^2]: Cited in Shapiro, Gilbert and John Markoff. “A Matter of Definition.” In Carl Roberts, ed. Text Analysis for the Social Sciences: Methods for Drawing Statistical Inferences from Texts and Transcripts. Mahwah, NJ: Lawrence Erlbaum (1997), Chapter 1. 12.
+[^3]: Krippendorff, Klaus. Content Analysis: an Introduction to Its Methodology /. Los Angeles:: SAGE, 2018.
+[^4]: Krippendorff, Content Analysis. 2018.
+[^5]: Salda$\tilde{n}$a, Johnny. The coding manual for qualitative researchers, 3rd ed. Thousand Oaks, CA: Sage (2015). 88. 
