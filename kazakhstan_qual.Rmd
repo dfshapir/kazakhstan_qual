@@ -1,9 +1,15 @@
 ---
-title: "Content and Discourse Analysis: Kazakhstan and China"
-author: "Daniel Shapiro, PSCI 6802"
-output: pdf_document
+title: "Content/Discourse Analysis: Kazakhstan and China"
+author: "Daniel Shapiro, PSCI 6802: Paper 2 (Paper Option 6)"
+lang: en-US
+output: 
+  pdf_document:
+    latex_engine: xelatex
 header-includes:
   - \usepackage{setspace}
+  - \usepackage{polyglossia}
+  - \setdefaultlanguage{english}
+  - \setotherlanguage{russian}
 ---
 
 ```{r setup, include=FALSE}
@@ -30,7 +36,8 @@ percentage <- kazakhstan %>%
   filter(Type %in% c("Import Pct", "Export Pct"))
 
 amount <- kazakhstan %>%
-  filter(Type %in% c("Import Amt", "Export Amt"))
+  filter(Type %in% c("Import Amt", "Export Amt")) %>%
+  mutate(Value = Value/1000000)
 ```
 
 *Figure 1:*
@@ -57,15 +64,15 @@ amt <- ggplot(amount, aes(x = Year, y = Value)) +
   geom_line() +
   labs(title = "Kazakhstan Exports to and Imports From China, Amount",
        subtitle = "Data from World Bank",
-       y = "Amount (in thousands USD)") +
+       y = "Amount (in billions USD)") +
   facet_wrap(~Type)
 
 amt
 ```
 
-Given this massive increase in China's economic importance to Kazakhstan, a logical question follows -- how has Kazakhstan's rhetoric about China changed over time? More formally for the purposes of this paper, **how has the Kazakhstani president's rhetoric about China changed as trade between the two countries has risen?**
+Given this massive increase in China's economic importance to Kazakhstan, a logical question follows -- how has Kazakhstan's rhetoric about China changed over time? More formally for the purposes of this paper, **how has the Kazakhstani president's rhetoric about China changed as trade between the two countries has risen?** This paper will act mostly as an exploratory study, informing us about which rhetorical phenomena correlate with increased levels of trade between Kazakhstan and China. Trends from this 
 
-This question is important for a number of reasons. For one, it tells us about aspects of Kazakhstan's unique foreign policy profile vis-$\grave{a}$-vis a neighboring superpower. During our current era of great power conflict, understanding ways in which smaller states perceive their more powerful neighbors and their overall position in the international system is useful for scholars and policymakers alike. Additionally, this question helps us understand aspects of specifically what certain countries think of China and how these perceptions have developed over time. Thirdly, through our analysis of Kazakhstani presidential speeches (as described in further detail below in the methodology section), we can better understand ways in which leaders' rhetoric can signal changes to come, changes that have already happened, and/or aspirational changes. While this study will only apply to Kazakhstan, similar work can be done for any number of other countries as well.[^1]
+This question is important for a number of reasons. For one, it tells us about aspects of Kazakhstan's unique foreign policy profile vis-$\grave{a}$-vis a neighboring superpower. During our current era of great power conflict, understanding ways in which smaller states perceive their more powerful neighbors and their overall position in the international system is useful for scholars and policymakers alike. Additionally, this question helps us understand aspects of specifically what certain countries think of China and how these perceptions have developed over time. Thirdly, through our analysis of Kazakhstani presidential speeches (as described in further detail below in the methodology section), we can better understand ways in which leaders' rhetoric can signal changes to come, changes that have already happened, and/or aspirational changes. While this study will only apply to Kazakhstan, similar work can be done for any number of other countries as well.[^1] And, finally, this exploratory work will lead to increased clarity on a) which areas of China/Kazakhstan relations deserve future thought and research, and, hopefully, on b) what trends in rhetoric tend to be associated with growth in bilateral trade.
 
 ## Methodology
 
@@ -78,16 +85,158 @@ To answer this question, this paper employs content analysis, a method which, ac
 * It **can** be qualitative as well as quantitative,
 * It is **replicable** and **valid**.
 
-For this paper, I draw inferences from text about the properties of the *source*, i.e. the Kazakhstani government or one of its representatives. There are obviously many different texts that could be used for the purposes of this paper, so I had to sample. Krippendorff (2018) writes that "...the universe of available texts is too large to be examined as a whole, so content analysts need to limit their research to a manageable body of texts.”[^3] Thus, I selected only a specific type of document -- State of the Union addresses by the President of Kazakhstan. These typically happen once a year, and are available on the President's website for most years that the World Bank provides trade data. State of the Union speeches are long and all-encompassing and tend to focus on the most important issues facing the country in a given year. Focusing only on these speeches makes the body of texts "manageable," ensures that they are being drawn from relatively similar units with the main differentiating variable being time, and makes sure that each text could address relations with China and one way or another. After selecting State of the Union speeches as my "type" of document, I then perform a *census* -- in Krippendorff's words, "a body of texts that includes all of its kind."[^4]
+For this paper, I draw inferences from text about the properties of the *source*, i.e. the Kazakhstani government or one of its representatives. There are obviously many different texts that could be used for the purposes of this paper, so I had to sample. Krippendorff (2018) writes that "...the universe of available texts is too large to be examined as a whole, so content analysts need to limit their research to a manageable body of texts.”[^3] Thus, I selected only a specific type of document -- State of the Union addresses by the President of Kazakhstan. These typically happen once a year, and are available on the President's website for most years that the World Bank provides trade data (1995-2020). State of the Union speeches are long and all-encompassing and tend to focus on the most important issues facing the country in a given year. Focusing only on these speeches makes the body of texts "manageable," ensures that they are being drawn from relatively similar units with the main differentiating variable being time, and makes sure that each text could address relations with China and one way or another. After selecting State of the Union speeches as my "type" of document, I then perform a *census* -- in Krippendorff's words, "a body of texts that includes all of its kind."[^4]
 
 In addition to paring down the volume of potentially analyzable texts to a more manageable level, content analysis also demands strict methodology in coding. Given Krippendorff's requirements for "replicability" and "validity," firm methodology is important for this part of the paper. Salda$\tilde{n}$a (2015) provides a comprehensive list of various coding styles. In this paper, I use *descriptive coding*, which, according to Salda$\tilde{n}$a, "... summarizes in a word or short phrase -- most often as a noun -- the basic topic of a passage of qualitative data."[^5] My codebook will be included as an appendix at the end of the paper; all codes used will be displayed there. 
 
+After going through all State of the Union speeches, I parsed out all of the sentences that included the word "China" or its Russian or Kazakh equivalents. Not all years have State of the Union speeches on the presidential website; 1995, 1996, 2013, 2015, and 2016 are not included. Additionally, not all years' addresses mention China.[^6] However, the data that we do have provides some interesting trends regarding how China is presented to the public in Kazakhstan and how the president's rhetoric has changed over time.
+
 ## Discussion and Results
 
-## Conclusions
+*History: Salient in early years, less so more recently*
+
+One trend that became evident through content analysis was that Kazakhstan's president discussed history significantly more in the 1990s, when bilateral trade was relatively minimal, than in the 2000s or the 2010s. In his 1997 address, then-President Nursultan Nazarbayev discussed how "our neighbors -- Russia, China and a group of Islamic and Central Asian states; countries of the Near and Middle East -- these states have historically been important global centers."[^7] He also referenced more modern history, noting how "some of the poorest countries in Asia emerged from poverty in the last 30 years and became flourishing industrial states [...] our great neighbor -- China -- demonstrates high speeds."[^8] 
+
+Later, in 1999, Nazarbayev addresses history to an even greater degree than in 1997. This phenomenon may have a fair amount to do with the title of the speech, "Stability and Security of the Country in a New Millennium;" perhaps Nazarbayev simply felt like going over some of the last millennium's history before moving into the new one. But the rhetoric does focus on history like its 1997 counterpart. In this speech, Nazarbayev first focuses on old history, going back to Kazakh-Chinese history centuries ago: "1,500 years ago, the first great Turkic empire appeared in the center of great Eurasia [...] conquering the space from Byzantium to China. [...] Pressure from quickly developing Europe and China in the 16th and 17th centuries led to a sharp decrease in opportunities for nomadic peoples." Then, he discusses newer history: "For the first time in a thousand years, Kazakhstan acquired juridically recognized borders with China, which became a border of friendship. Stable relations with China are exceptionally important to us."[^9] 
+
+While Nazarbayev discussed aspects of history at some length in his addresses in the late 1990s, he does not once mention China in any sort of historical sense in the new millennium: the only excerpts coded as "history" can be found prior to 2000. Note that this change corresponds closely to trends in Kazakhstan's trade relations with China: as the new millennium began, trade between the two countries rose quickly. While further research would be necessary to figure out if there is a true line of causation here, there certainly seems to be a correlation.
+
+Why might this be the case? Why might the "history" of Kazakhstan and China be more emphasized in periods of relatively low trade? The logical potential answer would seem to be that given that the level of economic interconnectivity between China and Kazakhstan at the time was so low, there was little of substance to talk about other than history. As real projects began to get off the ground and Kazakhstan and China began to work closer together with one another in concrete areas, rhetoric on history got replaced by notes on substantive projects. Cross-national analysis could show whether or not this trend is present not just in Kazakhstan, but in other countries as well -- perhaps when leaders spend more time talking about some form of "shared history" with another country than actual projects, it can signal both a) a lack of substantive projects between the two countries at the time, b) some sort of desire to improve relations -- after all, by appealing to rhetoric on shared historical ties, Nazarbayev seems to be willing similar-quality future ties into existence -- or c) something else entirely. While this question deserves further analysis and supplementation by other country case studies, this finding provides food for thought for future work.
+
+*"China as an Example: constant throughout*
+
+While "history" proves to be a subject discussed much more in the early years of Kazakhstan-China relations than later, other subjects are more constant throughout. One of these is the idea of "China as an example." Initially, I only had the "China as an example" sub-code under the "diplomacy" code; however, I added it into the "economics" code as well as I continued analyzing the documents. As it turned out, Nazarbayev spoke about China in exemplary terms not just regarding Beijing's geopolitical stances, but also regarding its economic policy. We can see Nazarbayev lauding China both politically and economically from the 1990s to the 2010s: in 1999, Nazarbayev stated that "Kazakhstan welcomes China's politics, which are aimed against hegemony and towards friendship with neighboring countries."[^10] In a 2014 speech, Nazarbayev takes a less direct but no less complimentary approach to Chinese politics, stating that "today, many successful countries -- China, Malaysia and Turkey -- follow their long-term strategies. Strategic planning is a ‘number one’ rule in the 21st century, because no wind will be favorable unless a country does not know its route and destination harbor."[^11] Judging by these quotes, we can see that regardless of Kazakhstan's economic position vis-$\grave{a}$-vis China, it seems that the Nazarbayev administration tended to look at China as a political example.
+
+What about the economic side? One might think that the motif of China as an economic example would change over time as Kazakhstani/Chinese trade ties grew. According to my content analysis, however, the portrayal of China's "example" status economically also seems to remain largely constant. Going back to a previous quote, we remember that Nazarbayev praised China in his 1997 speech, when he stated that "our great neighbor -- China -- demonstrates high speeds [of growth]." Later in that speech, Nazarbayev also praises China's economic progress, noting that Kazakhstan, as the center of Eurasia, should "...play the role of an economic and cultural link between three quickly growing regions -- China, Russia, and the Muslim world."[^12] Clearly, Nazarbayev portrays China as an economic example even when trade between the two countries is not exceptionally high.
+
+In 2014, trade between Kazakhstan and China was significantly higher than it was in the past -- in fact, imports from China to Kazakhstan were an eye-popping 158x higher than in 1997! Nonetheless, Nazarbayev still looks at China as an example, stating that "there are six more candidates to join the OECD: Brazil, China, India, Indonesia, Russia and South Africa. [...] They now demonstrate high rates of investment, scientific research, productivity, a large share of small and medium-sized businesses, and high standards of living. These indicators of OECD countries provide a natural benchmark for Kazakhstan on our way to joining the top 30 developed nations of the world."[^13] Even though trade between the two countries had risen significantly by this point and Kazakhstan's economy had arguably grown to the point that perhaps it did not "need" an example for growth anymore, rhetoric on how exemplary China's economy was remained in Nazarbayev's speeches. 
+
+Can we see a correlation between growth of trade between the two countries and rhetoric regarding China's position as an "exemplary" country? In Kazakhstan's case, it seems that the answer is no. Speeches in multiple decades show that Kazakhstan still looks at China as an example, even when they have already reached the point that "examples" are less necessary. Why might this be the case? In contrast to discussing "history," which seemed to signify that Nazarbayev did not have many present-day joint projects on which to pull in his speeches, China as an "example" may have remained salient throughout for a number of reasons. For one, an increase in bilateral trade between China and Kazakhstan does not necessarily indicate that Kazakhstan is necessarily "catching up" to China and thus does not need it anymore as an example: on the contrary, by 2014, while Kazakhstan had certainly grown, China also had shown a massive growth in GDP per capita and had in fact passed Kazakhstan by that time. Following China's example was thus by no means an unwise idea. Secondly, while ties between China and Kazakhstan had grown, Kazakhstan was still very clearly the "junior partner" in the relationship. Thus, it is no wonder that even though Kazakhstan had already successfully imitated China's economic growth in certain ways, a) Nazarbayev may have been signalling that it was in Kazakhstan's best interests to *continue* following China's example, and/or b) as Kazakhstan/China relations continued to grow, Nazarbayev may have believed that it was in Kazakhstan's best interests to at the very least continue to speak flatteringly of its powerful eastern neighbor to keep such ties alive. Finally, politically, the world in 2014 was largely moving away from great power cooperation and toward great power conflict. Sandwiched between Russia and China, two countries whose opposition to the West was growing, it would likely be inopportune for Nazarbayev to *not* discuss China's political stances and laud China's "strategy." As Nazarbayev noted in his 1997 speech, Kazakhstan respected China's stance against "hegemony," and as the beginnings of great power conflict stirred in Ukraine in 2014, this narrative was certainly relevant then too. Overall, through this evidence, we can see that looking at China as an example **does not** follow trends in trade, at least certainly in the case of Kazakhstan. 
+
+*Developing Economic Ties: another constant*
+
+A third theme that was prevalent and unwavering throughout much of the last 25 years was the discussion of development of non-trade-specific economic ties. Discussions on this topic have been on many different themes, ranging from transport to infrastructure, investment, etc. It may seem relatively obvious that Nazarbayev has discussed the development of economic ties throughout this entire period; however, a closer look at how exactly these thoughts are expressed can help elucidate some interesting patterns, especially in areas that are related to economics but are not direct "trade" between the two countries. Mainly, we can see that as trade has grown, the level of detail in Nazarbayev's speeches on these sorts of related issues has overall increased. This pattern is especially evident in terms of transport, and it represents somewhat of a hybrid between themes discovered when analyzing Nazarbayev's rhetoric on "history" (low trade = appeals to history, higher trade = fewer appeals to history) and "China as an example" (constant throughout).
+
+One area that Nazarbayev has discussed throughout this time period is transport ties. In 1997, Nazarbayev stated that one of Kazakhstan's main goals was to "increase the power of railroad transport between the Republic of Kazakhstan and the People's Republic of China"[^14] by 2000. In the next decade, we can see a similar topic emerging again -- in his 2006 address, Nazarbayev expressed a desire to work on "...transport-logistical centers" including paying "special attention" to "the development of the 'Khorgos" center for border cooperation with China."[^15] More recently, in 2014, Nazarbayev also addressed this issue, stating that "we need to develop the logistics services sector. First of all, it is a question of the maximum use of the Customs Union territory for transportation of our goods. The construction works of the 'Western Europe – Western China' corridor are coming to an end."[^16] Clearly, Nazarbayev has discussed developing transport ties with China for decades; however, only in recent years has the conversation shifted from more general terms (e.g. "increase the power of railroad transport") to more specific terms (e.g. progress reports on the Western Europe-Western China corridor). 
+
+Another trend that Nazarbayev discusses throughout the years is infrastructure and associated Chinese investment. This has also been relatively constant, although the level of detail discussed has not changed as much as the "transport" question has. In 1997, Nazarbayev discussed infrastructure and investment by stating that "Kazakhstan will undertake all steps in its power to complete the construction of [...] another pipeline to the People's Republic of China in 2004."[^17] A decade later, we can still see rhetoric on infrastructure in Nazarbayev's words about China, as he underscores the necessity of "...working [with China] on questions related to industrial zones, in Astana in particular, as well as special economic zones..."[^18] And, more recently, in 2017, Nazarbayev stated specifically in his address that "...it is necessary to effectively implement a joint investment program with China to establish production facilities in Kazakhstan. The agreements have been inked with the Chinese side. The facilities have been identified. We need to work specifically."[^19] Overall, this topic has also remained constant as part of Nazarbayev's portrayal of China as time has gone on -- even as the economic relationship between the two countries has shifted.
+
+Overall, this section, while intuitive in a sense, is interesting in its own way. Even as Kazakhstan's trade with China increased, the frequency of Nazarbayev mentioning other economics-related issues stayed relatively constant. For investment, this makes some degree of sense: data from The Vienna Institute for International Economic Studies (wiiw) shows that Chinese FDI stock in Kazakhstan did not increase to anywhere near the same degree that bilateral trade did. Thus, it makes a certain amount of sense that Nazarbayev would continue to push for increased investment even while trade levels stay high. Discussions of transport connections, however, did change, at least qualitatively: as time went on, transport links between China and Kazakhstan became less aspirational and more linked to real, concrete events. Moving on from economics, however, we find a much more intriguing story -- the changing dialogue on security vis-$\grave{a}$-vis China.
+
+*Security Situation: from general terms to "strategic partnership"*
+
+Naturally, given Kazakhstan's lengthy border with China, security issues would be expected to play a prominent role in any discussion that Kazakhstan's president would have about its eastern neighbor. Indeed, security issues related to China do crop up in many of Nazarbayev's speeches; I used the code "Security" quite frequently. Over the years, we can see how increased trade ties have correlated with more comfortable rhetoric on security, from a "lack of a problem" in 1997 to a "strategic partnership" in 2018.
+
+In the 1990s, regional security arrangements that included China had not yet gotten off the ground. While Kazakhstan was part of the Russia-dominated Collective Security Treaty Organization (CSTO) from the early days of independence, security cooperation with China took longer to develop. Thus, in 1997, the best that Nazarbayev could say about Kazakhstan's security vis-$\grave{a}$-vis China  was that "it is completely clear that neither Russia, China, the West or Muslim countries have convincing motives to attack us."[^20] This is not exactly a ringing endorsement -- merely saying that a country does not have a "convincing motive" to attack you is likely not a very well-founded security arrangement. Given Kazakhstan's lack of defense agreements with China at the time and a relatively low level of economic interconnectivity, it is no wonder that this was how security relations between the two countries was phrased at the time. 
+
+With the advent of the Shanghai Cooperation Organization (SCO) in 2001, however, the discussion of security became more substantive and friendly than before. In 1999, still before the advent of the organization itself, Nazarbayev praised the SCO's precursor in his State of the Union, arguing that "the strengthening of cooperation with this great state [China] in the 'Shanghai Five' will become the foundation of regional security in our part of the planet."[^21] Later, in 2006, the SCO receives more praise, as Nazarbayev states that "we also intend to coordinate our politics on resolving issues of migration and regional security within the framework of the SCO and on the basis of concrete bilateral initiatives and agreements."[^22] Clearly, with the establishment of China-centered security agreements that included Kazakhstan, there was some movement toward more confident and constructive dialog in Nazarbayev's State of the Union speeches regarding the security relationship between Kazakhstan and China.
+
+However, we can also look at this softening in rhetoric not just in simplistic terms of newly signed security agreements, but also in terms of increased ties on all fronts, whether security-related, political, economic, or otherwise. For purposes of this paper, there are a few excerpts from Nazarbayev's speeches that also show potential correlation with a rise in trade. For one, in 2004, Nazarbayev stated that "it is important to have stable and friendly relations with our neighbor, China. China is our reliable partner with whom we engage in constant dialog on all questions that are of mutual interest."[^23] While this does not get into specifics on hard security issues, the idea of "stable and friendly" relations certainly goes beyond simply asserting that China most likely does not have a good motive to attack. Additionally, the statement does not just focus on security: while the "stable and friendly" part does certainly have a security component to it, the idea that a good partnership is built on dialog "on all questions that are of mutual interest" shows that growing stability in the relationship is also facilitated by growth in other areas, including economic ties. 
+
+Developments in the security relationship between Kazakhstan and China continued to grow through the next few years, and this growth was heavily aided by -- and, arguably, heavily driven by -- economic growth and increased trade. In 2018, President Nazarbayev stated proudly that "a comprehensive strategic partnership with the People’s Republic of China has been gradually developing. The One Belt - One Road programme gave a new impetus to our relations with China.”[^24] This statement is important for a number of reasons. First, announcing Kazakhstan's relationship as "strategic partnership" is a far cry from 20 years ago, when Nazarbayev simply stated that China did not have a good reason to invade. Clearly, Kazakhstan-China relations have developed significantly since then. Secondly, and most importantly for this paper, we can see that economic relations are crucial to how Kazakhstan's government frames its security relationship with China -- or, at the very least, how the president frames this relationship publicly to his citizens. The fact that Nazarbayev discusses One Belt - One Road -- a fundamentally *geoeconomic* project -- as the main impetus behind the two countries achieving this higher level of relations says something significant about the reasoning of the government. For Nazarbayev, increased economic integration and interconnectivity with China has had a direct impact on Kazakhstan's security situation. While some observers may look at China's activities in Central Asia as putting countries in inescapable "debt traps,"[^25] clearly, Nazarbayev presents this phenomenon in a very different manner.
+
+## Limitations and Conclusions
+
+Naturally, this paper comes with many limitations. For one, it is mainly meant as an exploratory paper: it only focuses on one country, and is largely simply looking for potential questions and puzzles that could worked on for the future, when a paper like this could become part of a larger research project. Additionally, even understanding that the study is only meant to be "exploratory," there are questions as to whether using State of the Union speeches is the correct way to go. While State of the Union speeches do provide a nice benchmark upon which other country case studies can build (given that most countries' leaders regularly give some sort of similar address), they are skewed toward a certain audience, and they happen irregularly. Thus, some further analysis might be necessary here. Finally, not that this paper attempts to do so, but determining causality is hard. Finding correlations and trends is not incredibly difficult here, but figuring out whether some of these trends are truly connected would require additional research and, most likely, additional methods. 
+
+Nonetheless, however, there are a number of conclusions that we can draw from this work. Through content analysis of a selected sample of Kazakhstani official speeches, we can see that there are certain aspects of Nursultan Nazarbayev's rhetoric vis-$\grave{a}$-vis China that have stayed constant, even when trade and economic interconnectivity between the two countries has grown tremendously. This includes language on infrastructure and investment by China in Kazakhstan, as well as the idea of Kazakhstan looking at China as an example for its own development -- both economically and politically. Additionally, while Kazakhstani rhetoric on transport links between the two countries has changed somewhat in its focus, it has nonetheless remained as a relatively consistent topic of discussion. Overall, although the relationship between the two countries has grown significantly, Kazakhstan still seems to look at China as an example, and the Kazakhstani government still believes in the importance of increased transport links between the two countries and hopes for continued growth in investment, whether in infrastructure or otherwise. 
+
+At the same time, however, we can also observe various themes that have changed over this duration. For one, as the relationship between Kazakhstan and China grew and developed, rhetoric on history and/or shared history between the two states decreased, as there were more concrete, substantive projects to discuss. Additionally, rhetoric on Kazakhstan's security situation changed as well. In the 1990s, Nazarbayev's words on Kazakhstan's security situation vis-$\grave{a}$-vis China did not describe a great friendship or a close relationship; rather, they were simply hopeful for the future and played up some of China's and Kazakhstan's mutual interests. Moving forward, however, rhetoric changed -- Nazarbayev discussed the fruits of Shanghai Cooperation Organization meetings and went so far as to refer to the China-Kazakhstan relationship as a budding "strategic partnership." While some of these developments likely have to do with the foundation and strengthening of the SCO, Nazarbayev himself states that economic programs -- such as China's One Belt - One Road program -- have been the primary impetus of this improved security relationship. 
+
+In general, there are many directions that work on Kazakhstan-China relations can proceed; deciding which ones are worth further exploration shall be left up to the next researcher. However, thanks to content analysis, we can understand some key nuances in the Kazakhstan-China relationship and, potentially, use this work to help make predictions for the future. 
+
+## Appendix: Codebook
+
+\singlespacing
+
+First, record the year and speaker of the State of the Union. 
+
+Search for "Chin" if speech is available in English (to capture both China and Chinese), or its equivalents in Russian or in Kazakh if the documents are only available in Russian or Kazakh. Make sure to search only the stem of the word to ensure that adjectival forms or forms in a different case are included as well. Then, pull out every paragraph in these documents that contain some variation of the word and mark them down by year. It is possible that such a strategy would lead to worries about subjectivity and a lack of replicability; however, to only include the single sentence that includes the word itself would be to dismiss quite a bit of important data.
+
+Then, going by sentence, we can break down quotes first by broad categories: **economics, diplomacy, security, history,** and **culture**. Some sentences will have aspects of all categories; it is fine to code things with multiple broad-based codes. 
+
+Next, we move to sub-coding. If **economics**, determine if it is related to:
+
+* Trade
+* Investment
+* Infrastructure
+* Development
+* Agreements
+* Corridors, Incl. Belt and Road
+* Expansion
+* Cooperation
+* Competition
+* Natural resources
+* Transport
+* Growth
+* China as an example
+* Other -- specify
+
+If **diplomacy**, potential codes could include:
+
+* Dialog
+* Agreements
+* Partnership
+* Cooperation
+* Regional partnership
+* Neighbors
+* Trust and reliability
+* Strategy
+* China as an Example
+* Other -- specify
+
+If **security**, potential codes could include:
+
+* Agreements
+* Partnership
+* Cooperation
+* Regional partnership
+* Stability
+* Non-proliferation
+* Borders and territorial integrity
+* Strategy
+* Other -- specify
+
+If **history**, potential codes could include:
+
+* 20th-21st century history
+* Older history
+* Other -- specify
+
+If **culture**, potential codes could include:
+
+* Islam
+* Geographic proximity
+* Asia
+* Eurasia
+* Other -- specify
+
+Just like with my broad categories of codes, these "sub-categories" are also by no means exclusive. I added in an "other -- specify" category in case any scholar replicating my work sees something that does not quite fit with any of the aforementioned categories that I listed.
+
+Like the others, these codes also are not necessarily mutually exclusive. 
 
 [^1]: In my dissertation, I hope to explore these sorts of questions as a cross-case comparative study between a number of different countries.
 [^2]: Cited in Shapiro, Gilbert and John Markoff. “A Matter of Definition.” In Carl Roberts, ed. Text Analysis for the Social Sciences: Methods for Drawing Statistical Inferences from Texts and Transcripts. Mahwah, NJ: Lawrence Erlbaum (1997), Chapter 1. 12.
 [^3]: Krippendorff, Klaus. Content Analysis: an Introduction to Its Methodology /. Los Angeles:: SAGE, 2018.
 [^4]: Krippendorff, Content Analysis. 2018.
-[^5]: Salda$\tilde{n}$a, Johnny. The coding manual for qualitative researchers, 3rd ed. Thousand Oaks, CA: Sage (2015). 88. 
+[^5]: Salda$\tilde{n}$a, Johnny. *The coding manual for qualitative researchers,* 3rd ed. Thousand Oaks, CA: Sage (2015). 88.
+[^6]: While it may seem that this lack of data makes State of the Union speeches less palatable options for analysis, 
+[^7]: Nazarbayev, Nursultan. "Poslaniye Prezidenta Respubliki Kazakhstan N.A. Nazarbayev narodu Kazakhstana: Protsvetanie, bezopasnost' i uluchshenie blagosostoyanie vsekh kazakhstantsev." October 1997 (Russian version).
+[^8]: Ibid, 1997.
+[^9]: Nazarbayev, Nursultan. "Poslaniye Prezidenta Respubliki Kazakhstan N.A. Nazarbayev narodu Kazakhstana: Stabil'nost' i bezopasnost' strany v novom stoletii." September 1999 (Russian version).
+[^10]: Ibid, 1999.
+[^11]: Nazarbayev, Nursultan. "Address of the President of the Republic of Kazakhstan N.Nazarbayev to the nation: Kazakhstan's way - 2050: common aim, common interests, common future." January 2014 (English version).
+[^12]: Nazarbayev, Nursultan. "Poslaniye Prezidenta," 1997.
+[^13]: Nazarbayev, Nursultan. "Address of the President," 2014.
+[^14]: Nazarbayev, Nursultan. "Poslaniye Prezidenta," 1997.
+[^15]: Nazarbayev, Nursultan. "Poslaniye Prezidenta Respubliki Kazakhstan N.A. Nazarbayev narodu Kazakhstana: Strategiya vkhozhdeniya Kazakhstana v chislo 50-ti naibolee konkurentosposobnykh stran mira, Kazakhstan na poroge novogo rynka vpered v svoem razvitii. March 2006 (Russian version).
+[^16]: Nazarbayev, Nursultan. "Address of the President," 2014.
+[^17]: Nazarbayev, Nursultan. "Poslaniye Prezidenta," 1997.
+[^18]: Nazarbayev, Nursultan. "Poslaniye Prezidenta," 2006.
+[^19]: Nazarbayev, Nursultan. "The President of Kazakhstan Nursultan Nazarbayev’s Address to the Nation of Kazakhstan: Third Modernization of Kazakhstan: Global Competitiveness." January 2017.
+[^20]: Nazarbayev, Nursultan. "Poslaniye Prezidenta," 1997.
+[^21]: Nazarbayev, Nursultan. "Poslaniye Prezidenta," 1999.
+[^22]: Nazarbayev, Nursultan. "Poslaniye Prezidenta," 2006.
+[^23]: Nazarbayev, Nursultan. "Poslaniye Prezidenta Respubliki Kazakhstan N.A. Nazarbayev narodu Kazakhstana: K konkurentosposobnomu Kazakhstanu, konkurentosposobnoy ekonomike, konkurentosposobnoy natsii." March 2004 (Russian version).
+[^24]: Nazarbayev, Nursultan. "State of the Nation Address of President of the Republic of Kazakhstan Nursultan Nazarbayev: Growing welfare of Kazakh citizens: Increase in income and quality of life." October 2018. 
+[^25]: This has been a common theme in scholarly and journalistic literature for the past decade or so -- a cursory Google search on "Central Asia Chinese debt trap" will come up with a large number of results. 
